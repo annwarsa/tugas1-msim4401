@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue JS Looping Example</title>
+    <!-- Tambahkan CDN Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .number {
+            font-size: 20px;
+            margin: 5px;
+            padding: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2>Menampilkan Nilai 1 sampai 50 dengan Vue.js Looping</h2>
+        <div v-for="number in numbers" :key="number" class="number">
+            {{ number }}
+        </div>
+    </div>
+
+    <script>
+        // Membuat instance Vue
+        const { createApp } = Vue;
+        createApp({
+            data() {
+                return {
+                    // Membuat array angka dari 1 sampai 50
+                    numbers: Array.from({ length: 50 }, (_, i) => i + 1)
+                };
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
